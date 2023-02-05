@@ -14,13 +14,14 @@
     ];
     const ulEl = document.querySelector(".gallery");
     const image = images.reduce((string, item) => string + `<img src="${item.url}"alt="${item.alt}"width="250" height="150"`, "");
+    
     ulEl.innerHTML = image;
-    ulEl.style.listStyle = "none";
-    ulEl.style.display = "flex";
-    ulEl.style.flexWrap = "nowrap";
-    ulEl.style.gap = "30px";
-
-    images.forEach(el => {
-      ulEl.insertAdjacentHTML("afterbegin", `<li><img src="${el.url}"alt="${el.alt}"width="250" height="150"</li>`,);
-    })
+    // ulEl.style.listStyle = "none";
+    // ulEl.style.display = "flex";
+    // ulEl.style.flexWrap = "nowrap";
+    // ulEl.style.gap = "30px";
+    const markup = images.map((image) => `<li><img src="${image.url}"alt="${image.alt}"width="250" height="150"</li>`).join("");
+    ulEl.insertAdjacentHTML("beforebegin", markup);
+    
+    
 
