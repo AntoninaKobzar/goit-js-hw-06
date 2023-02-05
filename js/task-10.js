@@ -14,10 +14,9 @@
       boxEl.style.width = 30 + i * 10 + "px";
       boxEl.style.height = 30 + i * 10 + "px";
       boxEl.style.backgroundColor = getRandomHexColor();
-      boxesArr.push(boxEl);
-      divEl.append(...boxesArr);
-
+      boxesArr.push(boxEl); 
     }
+    divEl.append(...boxesArr);
   }
   const destroyBoxes = (event) => (divEl.innerHTML = "");
   createBtn.addEventListener("click", createBoxes);
